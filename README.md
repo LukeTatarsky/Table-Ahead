@@ -1,5 +1,6 @@
 # Table-Ahead
- Android Programming Group Project
+ Restaurant Booking App - Android Programming Group Project
+ 
 
 <p>
   <img src="https://github.com/LukeTatarsky/Table-Ahead/blob/main/Screenshots/Screenshot_20251024-01.jpg" alt="" style="width:25%; height:25%;">
