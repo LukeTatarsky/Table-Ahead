@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Tableahead"
+        tools:targetApi="31">
+        <activity
+            android:name=".RestaurantReviewWrite"
+            android:exported="false" />
+        <activity
+            android:name=".OrderSelect"
+            android:exported="false" />
+        <activity
+            android:name=".search.DistanceScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MenuSelect"
+            android:exported="false" />
+        <activity
+            android:name=".RestaurantReview"
+            android:exported="false" />
+        <activity
+            android:name=".search.NameScreen"
+            android:exported="false" />
+        <activity
+            android:name=".search.ResultScreen"
+            android:exported="false" />
+        <activity
+            android:name=".search.CategoryScreen"
+            android:exported="false" />
+        <activity
+            android:name=".search.SelectTypeScreen"
+            android:exported="false" />
+        <activity
+            android:name=".tableScreen"
+            android:exported="false" />
+        <activity
+            android:name=".bookings.userBookings"
+            android:exported="false" />
+        <activity
+            android:name=".bookings.BookingOverview"
+            android:exported="false" />
+        <activity
+            android:name=".helpScreen"
+            android:exported="false" />
+        <activity
+            android:name=".accountScreen"
+            android:exported="false" />
+    </application>
+</manifest>

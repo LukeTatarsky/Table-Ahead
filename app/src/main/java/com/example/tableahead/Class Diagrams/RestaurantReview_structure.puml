@@ -1,0 +1,192 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.tableahead.RestaurantReview",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_121138761 { 
+   	label=tableahead
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   RestaurantModel573312914[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)RestaurantModel</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   distance: float [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   imageLink: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   popularity: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reviewCount: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reviewRating: Double [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+RestaurantReview156698436[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)RestaurantReview</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   db: FirebaseFirestore [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fabAddReview: FloatingActionButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   restaurant: RestaurantModel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   restaurantId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   reviewCount: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   reviewRating: Double [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reviewsAdapter: ReviewsAdapter [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reviewsList: List&lt;Review&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reviewsRecyclerView: RecyclerView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   txtRestName: TextView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   userSelectedRating: Double [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- addReview()</TD></TR>
+<TR><TD ALIGN="LEFT" >- editReview(review: Review, position: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >- fetchRestaurantData(restaurantId: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- fetchReviewsforRestaurant(restaurantId: String)</TD></TR>
+<TR><TD ALIGN="LEFT" ># onActivityResult(requestCode: int, resultCode: int, data: Intent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># onCreate(savedInstanceState: Bundle)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Review410850388[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Review</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   rating: Double [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reviewContent: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reviewId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reviewerId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reviewerName: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ReviewsAdapter996762002[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ReviewsAdapter</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   clickListener: OnItemClickListener [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   context: Context [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   mAuth: FirebaseAuth [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reviewsList: List&lt;Review&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ onBindViewHolder(holder: ViewHolder, position: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onCreateViewHolder(parent: ViewGroup, viewType: int): ViewHolder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+RestaurantReview156698436 -> RestaurantModel573312914[label="restaurant
+[0..1]"];
+RestaurantReview156698436 -> Review410850388[label="reviewsList
+[0..*]"];
+RestaurantReview156698436 -> ReviewsAdapter996762002[label="reviewsAdapter
+[0..1]"];
+ReviewsAdapter996762002 -> Review410850388[label="reviewsList
+[0..*]"];
+    
+}
+@enduml

@@ -1,0 +1,179 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.tableahead.search.ResultScreen",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_121138761 { 
+   	label=tableahead
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   RestaurantModel573312914[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)RestaurantModel</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   distance: float [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   imageLink: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   popularity: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reviewCount: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   reviewRating: Double [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ResultRecyclerViewAdapter573312914[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ResultRecyclerViewAdapter</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   context: Context [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   restaurantModels: ArrayList&lt;RestaurantModel&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   resultRVInterface: ResultRVInterface [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ onBindViewHolder(holder: ResultViewHolder, position: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onCreateViewHolder(parent: ViewGroup, viewType: int): ResultViewHolder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ResultScreen573312914[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ResultScreen</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   adapter: ResultRecyclerViewAdapter [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   currLat: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   currLon: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   locationListener: LocationListener [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   newCount: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   newRating: Double [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   paths: ArrayList&lt;String&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   positionG: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   restaurantModels: ArrayList&lt;RestaurantModel&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   results_rv: RecyclerView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   spinner: Spinner [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># LoadRestaurantInfo()</TD></TR>
+<TR><TD ALIGN="LEFT" >- SortByDistance(restaurantList: ArrayList&lt;RestaurantModel&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >- SortByPopularity(restaurantList: ArrayList&lt;RestaurantModel&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >- SortByRating(restaurantList: ArrayList&lt;RestaurantModel&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" ># onActivityResult(requestCode: int, resultCode: int, data: Intent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onBtnClickResult(position: int)</TD></TR>
+<TR><TD ALIGN="LEFT" ># onCreate(savedInstanceState: Bundle)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onItemSelected(adapterView: AdapterView&lt;?&gt;, view: View, i: int, l: long)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onNothingSelected(adapterView: AdapterView&lt;?&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onReviewClickResult(position: int, selectedRating: float)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+ResultRecyclerViewAdapter573312914 -> RestaurantModel573312914[label="restaurantModels
+[0..*]"];
+ResultRecyclerViewAdapter573312914 -> ResultScreen573312914[label="resultRVInterface
+[0..1]", arrowhead=none];
+ResultScreen573312914 -> RestaurantModel573312914[label="restaurantModels
+[0..*]"];
+ResultScreen573312914 -> ResultRecyclerViewAdapter573312914[label="adapter
+[0..1]"];
+    
+}
+@enduml

@@ -1,0 +1,233 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.tableahead.MenuSelect",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_121138761 { 
+   	label=tableahead
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   MenuItemModel410850388[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MenuItemModel</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   itemDescription: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   itemName: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   itemPrice: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ clone(): MenuItemModel</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MenuRecycleViewAdapter996762002[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MenuRecycleViewAdapter</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   context: Context [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   menuItemInterface: MenuItemInterface [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   menuItemModels: ArrayList&lt;MenuItemModel&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   viewTypes: ArrayList&lt;String&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getItemViewType(position: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onBindViewHolder(holder: MyViewHolder, position: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onCreateViewHolder(parent: ViewGroup, viewType: int): MyViewHolder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MenuSelect156698436[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MenuSelect</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   LAUNCH_SECOND_ACTIVITY: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   MenuCategories: Map&lt;String, Map&lt;String, Object&gt;&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   adapter: MenuRecycleViewAdapter [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   editing: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   itemIsCategory: ArrayList&lt;String&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   itemModels: ArrayList&lt;MenuItemModel&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   itemOrder: ArrayList&lt;MenuItemModel&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   restaurantDocID: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   table: Table [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- calculateSubtotal(items: ArrayList&lt;MenuItemModel&gt;): float</TD></TR>
+<TR><TD ALIGN="LEFT" ># onActivityResult(requestCode: int, resultCode: int, data: Intent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># onCreate(savedInstanceState: Bundle)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onItemClick(position: int)</TD></TR>
+<TR><TD ALIGN="LEFT" ># onResume()</TD></TR>
+<TR><TD ALIGN="LEFT" >- startOrderEdit()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+OrderSelect156698436[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)OrderSelect</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   FINISH_REQUEST_CODE: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   adapter: MenuRecycleViewAdapter [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   db: FirebaseFirestore [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   defaultSubText: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   editing: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   order: ArrayList&lt;MenuItemModel&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   subtotal: Float [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   table: Table [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- calculateSubtotal(items: ArrayList&lt;MenuItemModel&gt;): float</TD></TR>
+<TR><TD ALIGN="LEFT" ># onCreate(savedInstanceState: Bundle)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onItemClick(position: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ writeMenu()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Table156698436[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Table</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   bookingDate: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bookingId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bookingTime: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   note: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   partySize: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   restaurantId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   restaurantName: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   section: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tableId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tableNumber: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tableSeats: long [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ describeContents(): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ writeToParcel(dest: Parcel, flags: int)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+MenuRecycleViewAdapter996762002 -> MenuItemModel410850388[label="menuItemModels
+[0..*]"];
+MenuRecycleViewAdapter996762002 -> MenuSelect156698436[label="menuItemInterface
+[0..1]", arrowhead=none];
+MenuSelect156698436 -> MenuItemModel410850388[label="itemModels
+[0..*]"];
+MenuSelect156698436 -> MenuItemModel410850388[label="itemOrder
+[0..*]"];
+MenuSelect156698436 -> MenuRecycleViewAdapter996762002[label="adapter
+[0..1]"];
+MenuSelect156698436 -> OrderSelect156698436[arrowhead=none];
+MenuSelect156698436 -> Table156698436[label="table
+[0..1]"];
+OrderSelect156698436 -> MenuItemModel410850388[label="order
+[0..*]"];
+OrderSelect156698436 -> MenuRecycleViewAdapter996762002[label="adapter
+[0..1]"];
+OrderSelect156698436 -> Table156698436[label="table
+[0..1]"];
+    
+}
+@enduml

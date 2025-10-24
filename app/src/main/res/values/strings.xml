@@ -1,0 +1,184 @@
+<resources>
+    <string name="app_name">Tableahead</string>
+    <string name="accountImg">Account Image</string>
+    <string name="helpImg">Help Image</string>
+    <string name="close">Close</string>
+    <string name="about">About</string>
+    <string name="okay">Okay</string>
+    <string name="appInfo">Tableahead V1 by\nTravis Shirley,\nLuke Tatarsky,\nJoshua Hop Hing,\nEthan Rody, and\nYehonatan Katz</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="loading">Loading…</string>
+    <string name="base_data">Base Data</string>
+    <string name="base_title">Base Title</string>
+    <string name="bookings">Bookings</string>
+    <string name="descDateIcon">Date Icon</string>
+    <string name="descBookingDate">Booking Date</string>
+    <string name="descBookingTime">Booking Time</string>
+    <string name="descBookingParty">Party Size</string>
+    <string name="descRestImage">Restaurant Image</string>
+    <string name="descPartIcon">Party Icon</string>
+    <string name="reservationConfirmed">Reservation Confirmed</string>
+    <string name="table_row_number">Table:</string>
+    <string name="placeHolderPartSize" translatable="false">2</string>
+    <string name="placeHolderDate" translatable="false">Mon, Jan 1</string>
+    <string name="placeHolderTime" translatable="false">2:00 PM</string>
+    <string name="placeHolderTableRow" translatable="false">4</string>
+    <string name="placeholderRestaurantName">Restaurant Name</string>
+    <string name="table_row_seats">Seats:</string>
+    <string name="table_row_section">Section:</string>
+    <string name="editing">Editing:</string>
+    <string name="nothing">Nothing</string>
+    <string name="confirm">Confirm</string>
+    <string name="emptyText">Please type something first!</string>
+    <string name="updateAccountSuccess">Successfully updated account info!</string>
+    <string name="alreadyPhone">Remove Phone Number</string>
+    <string name="addPhoneNum">Add Phone Number</string>
+    <string name="enterPhoneNum">Enter your phone number:</string>
+    <string name="phoneNumTitle">New Phone Number</string>
+    <string name="cancel">Cancel</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="searchName">Search by Name</string>
+    <string name="searchCategory">Search by Category</string>
+    <string name="nearYou">Find Nearby</string>
+    <string name="search">Search</string>
+    <string name="categories"><u><b>Categories</b></u></string>
+    <string name="selected"><u><b>Selected</b></u></string>
+    <string name="add_cat">Select category for search</string>
+    <string name="remove_cat">Deselect category for search</string>
+    <string name="ok">Okay</string>
+    <string name="selectAtLeastOneCat">Select at least 1 category</string>
+    <string name="defaultMenuTitle">Menu</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="click_to_login">Back to login</string>
+    <string name="click_to_register">Click to register</string>
+    <string name="enterResName">Enter restaurant name here</string>
+    <string name="emptyName">Enter a restaurant name for search</string>
+    <string name="party_of">Party of:</string>
+    <string name="chose_time">Select Date and Time</string>
+    <string name="loadingDate">Fetching Data…</string>
+    <string name="phoneNumberColon">Phone Number:</string>
+    <string name="firstNameColon">First Name:</string>
+    <string name="firstName">First Name</string>
+    <string name="lastNameColon">Last Name:</string>
+    <string name="emailAddressColon">Email Address:</string>
+    <string name="passwordColon">Password:</string>
+    <string name="gotUserData">Successfully retrieved user data</string>
+    <string name="gotUserDataFail">Failed to retrieve user data!</string>
+    <string name="searchDistance">Set search distance (km)</string>
+    <string name="searchDistanceHint">Set search distance (kilometers)</string>
+    <string name="inc_dist">Increment distance</string>
+    <string name="dec_dist">Decrement distance</string>
+    <string name="book_rest">Select restaurant to book table for</string>
+    <string name="menu_item_base">Item name</string>
+    <string name="menu_item_price">item price</string>
+    <string name="menu_item_description">item description</string>
+    <string name="tableahead_img">tableahead title image</string>
+    <string name="restaurants"><u><b>Restaurants</b></u></string>
+    <string name="order_by">Sort by:</string>
+    <string name="popularity">Popularity</string>
+    <string name="distance">Distance</string>
+    <string name="rating">Rating</string>
+    <string name="base_dist">not found</string>
+    <string name="big_dist" translatable="false">999+ km</string>
+    <string name="orderButton">Order</string>
+    <string name="orderText">Order</string>
+    <string name="removeItemDialog">Remove item?</string>
+    <string name="orderBack">Confirm</string>
+    <string name="deleteButton">Delete</string>
+    <string name="change_order_button">Change Order</string>
+    <string name="edit_booking_button">Edit Booking</string>
+    <string name="confirm_booking_button">Confirm</string>
+    <string name="note_edit_text">Note</string>
+    <string name="booking_overview_text">Booking Overview</string>
+    <string name="seats_text">Seats -</string>
+    <string name="seats">Seats</string>
+    <string name="party_size_text">Party Size -</string>
+    <string name="PlaceHolderDate" translatable="false">Jan 24, 2024</string>
+    <string name="placeholder_number" translatable="false">2</string>
+    <string name="Section_">Section -</string>
+    <string name="placeholder_section">Patio</string>
+    <string name="placeholder_sub_amount" translatable="false">123.45</string>
+    <string name="table_">Table -</string>
+    <string name="choose_a_table">Choose a Table</string>
+    <string name="tableNumber">Table Number</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="booking_accepted">Booking Accepted</string>
+    <string name="bookTable">Book</string>
+    <string name="noTablesFound">No available tables found. Try another time slot.</string>
+    <string name="error_getting_tables">An error occurred getting tables:</string>
+    <string name="too_early">Too early store not yet open</string>
+    <string name="too_late">Too late store closed</string>
+    <string name="deleteConfirm">Are you sure you want to delete?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="bookingDeleted">Booking Deleted Successfully!</string>
+    <string name="error_deleting_booking">Could not delete booking!</string>
+    <string name="selectValidTime">Please select a valid time.</string>
+    <string name="add_items">Add Items</string>
+    <string name="lastName">Last Name</string>
+    <string name="updateAccountFail">Failed to update account info!</string>
+    <string name="updateAccountFailInfo">Check if your password is long enough and your email is valid</string>
+    <string name="signOut">Sign Out</string>
+    <string name="tut0">Welcome\n\nWelcome to tableahead! In this tutorial, we will cover
+        how to use the app. You can press \"Next\" for the next part of the tutorial, \"Back\" to
+        view the previous message, and \"Close\" to exit it.</string>
+    <string name="tut1">Help Screen\n\nFirst, we will go over this screen, the Help Screen.
+        You can access this screen either by tapping on the question mark icon on the top left
+        of the screen, or by tapping on the \"Help\" button sometimes located in the same
+        place. Here, you can of course tap \"Tutorial\" to view this tutorial. You can also
+        view version information about the app by tapping \"About\".</string>
+    <string name="tut2" translatable="false">Toolbar\n\nThe toolbar you see at the top of the screen has 4
+        buttons. You already know about the \"Help\" button. The \"Bookings\" button lets
+        you view bookings you have already placed. The \"Search\" or Home button brings you to the
+        main page of the app, the search screen. Lastly, the account icon button brings
+        you to a page where you can manage details about your account, such as your name.</string>
+    <string name="tut3" translatable="false">Search Screen\n\nThe search screen allows you to look for restaurants that
+        you want to book tables at. You begin by tapping a button that allows you to
+        choose how you want to search. If you are searching by name, you enter the name
+        of the restaurant you wish to search for into a textbox, then tap \"Search\". If
+        you are searching by category, you can add or remove categories you wish to search
+        for by tapping them on the relevant part of the screen. You can also tap on categories
+        to see more info on them. If you are searching nearby,
+        you can enter how far you would like to search. Once you have completed your search,
+        you simply tap on the table icon to view bookings for a restaurant. You can also
+        change the sort type by tapping \"Distance\" in the top-right of the screen. You may
+        also tap on the stars/ratings icon to view ratings for a given restaurant.</string>
+    <string name="tut4" translatable="false">Booking a table\n\nAfter tapping on the table icon in the search
+        results screen, you will be shown tables for the next possible time slot. You can change
+        details for your booking by tapping on the button with the time and date. After doing so,
+        simply choose your desired table and confirm your booking. You will then be presented
+        with the menu screen.</string>
+    <string name="tut5" translatable="false">Menu Screen\n\nTo select what you want to eat during your visit, simply
+        tap on the plus sign icon for each item and press \"Order\" when finished. You can then
+        review your order and remove any unwanted items, add more items, or confirm your order. You
+        can also add a note to your order. Confirming will bring you to the Booking Overview
+        screen.</string>
+    <string name="tut6" translatable="false">Booking Overview Screen\n\nOn this screen, you can edit all the details of
+        your booking. Simply press the relevant button and you will be able to edit your order
+        in the requested manner. When done, you can confirm or delete your booking.</string>
+    <string name="tut7" translatable="false">User Bookings Screen\n\nOn this screen, you can view any bookings you have
+        already placed and edit them via the Booking Overview screen.</string>
+    <string name="tut8" translatable="false">Account Screen\n\nOn this screen, you can edit various aspects regarding
+        your account details. Simply tap on the relevant part of your account you wish to edit, then
+        fill out the textbox at the bottom of the screen and tap confirm. Make sure passwords meet
+        Google password requirements and email addresses are legitimate. Please note, you
+        cannot change your email without verifying your current email. You can also add a phone
+        number to your account if you wish. Adding it is similar to editing other parts of your
+        account. Lastly, you can also sign out of the app by tapping \"Sign Out\".</string>
+    <string name="Subtotal">"Subtotal: $"</string>
+    <string name="comments">Comments</string>
+    <string name="submit">Submit</string>
+    <string name="restaurant_name">Restaurant Name</string>
+    <string name="address">Address</string>
+    <string name="placeholderName">John Doe</string>
+    <string name="placeholderComment">Great food and service!</string>
+    <string name="rating_colon">Rating:</string>
+    <string name="edit">Edit</string>
+    <string name="placeholderReviewCount" translatable="false">(5)</string>
+    <string name="placeholderReviewRating" translatable="false">4.7</string>
+    <string name="logo">Logo</string>
+</resources>

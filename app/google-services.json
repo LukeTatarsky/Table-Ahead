@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "882708343357",
+    "project_id": "tableahead",
+    "storage_bucket": "tableahead.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882708343357:android:53ef2649cc67b0ea545854",
+        "android_client_info": {
+          "package_name": "com.example.tableahead"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeo--wbK6gmnW4XJNdtLKFPraevEll0W0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

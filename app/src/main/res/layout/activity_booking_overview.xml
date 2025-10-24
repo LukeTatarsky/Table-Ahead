@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bookings.BookingOverview">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/toolbar">
+
+                <ImageButton
+                    android:id="@+id/backBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/round_button"
+                    android:contentDescription="@string/back"
+                    android:minWidth="50dp"
+                    android:minHeight="50dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_back" />
+
+                <ImageButton
+                    android:id="@+id/helpBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_button"
+                    android:contentDescription="@string/back"
+                    android:minWidth="50dp"
+                    android:minHeight="50dp"
+                    android:scaleType="center"
+                    android:src="@drawable/help_icon" />
+
+                <ImageButton
+                    android:id="@+id/homeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_button"
+                    android:contentDescription="@string/back"
+                    android:minWidth="50dp"
+                    android:minHeight="50dp"
+                    android:scaleType="center"
+                    android:src="@drawable/icons8_home_32" />
+
+                <ImageButton
+                    android:id="@+id/accountBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_button"
+                    android:contentDescription="@string/back"
+                    android:minWidth="50dp"
+                    android:minHeight="50dp"
+                    android:scaleType="center"
+                    android:src="@drawable/account_icon" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <Button
+        android:id="@+id/btnCancelBooking"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="9dp"
+        android:text="@string/deleteButton"
+        app:layout_constraintBottom_toTopOf="@+id/btnConfirm"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnChangeTimeOver"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="9dp"
+        android:text="@string/edit_booking_button"
+        app:layout_constraintBottom_toTopOf="@+id/btnChangeOrder"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelBooking"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="@string/confirm_booking_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnCancelBooking"
+        app:layout_constraintStart_toStartOf="@+id/btnCancelBooking" />
+
+    <Button
+        android:id="@+id/btnChangeOrder"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="@string/change_order_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnChangeTimeOver"
+        app:layout_constraintStart_toStartOf="@+id/btnChangeTimeOver" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/booking_overview_text"
+        android:textColor="@color/my_light_primary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout2" />
+
+    <TextView
+        android:id="@+id/txtRestNameOverview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="97dp"
+        android:layout_marginBottom="98dp"
+        android:text="@string/placeholderRestaurantName"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTableOverview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/table_"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtTableNumberOverview"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDateOverview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/PlaceHolderDate"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtTimeOverview"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/seats_text"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtTableSeatsOverview"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSectionOverView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/placeholder_section"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/txtSecOv"
+        app:layout_constraintTop_toBottomOf="@+id/txtTimeOverview" />
+
+    <TextView
+        android:id="@+id/txtPartySizeOverview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="18dp"
+        android:text="@string/placeholder_number"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rvMenuOverview"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTimeOverview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/placeHolderTime"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/txtDateOverview"
+        app:layout_constraintTop_toBottomOf="@+id/txtRestNameOverview" />
+
+    <TextView
+        android:id="@+id/txtTableSeatsOverview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/placeholder_number"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/txtTableNumberOverview" />
+
+    <TextView
+        android:id="@+id/txtSecOv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/Section_"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtSectionOverView"
+        app:layout_constraintStart_toStartOf="@+id/txtTimeOverview" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="@string/party_size_text"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtPartySizeOverview"
+        app:layout_constraintEnd_toStartOf="@+id/txtPartySizeOverview" />
+
+    <TextView
+        android:id="@+id/txtTableNumberOverview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/placeholder_number"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/txtTableOverview"
+        app:layout_constraintTop_toBottomOf="@+id/txtDateOverview" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMenuOverview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="160dp"
+        android:maxHeight="250dp"
+        android:minHeight="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnChangeTimeOver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout2" />
+
+    <EditText
+        android:id="@+id/editTxtNote"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints="Note"
+        android:ems="10"
+        android:hint="@string/note_edit_text"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/txtSectionOverView"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/rvMenuOverview" />
+
+    <TextView
+        android:id="@+id/txtSubOverview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/Subtotal"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/txtSubtotalOverview"
+        app:layout_constraintTop_toBottomOf="@+id/rvMenuOverview" />
+
+    <TextView
+        android:id="@+id/txtSubtotalOverview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="@string/placeholder_sub_amount"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtSubOverview"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
